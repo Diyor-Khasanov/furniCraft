@@ -1,0 +1,87 @@
+// Colors
+$primary-color: #8b5a2b;
+$primary-dark: #6b451f;
+$primary-light: #a87c52;
+$secondary-color: #4a6b7d;
+$accent-color: #d4a762;
+$dark-color: #222;
+$light-color: #f9f5f0;
+$white: #fff;
+$black: #000;
+$gray: #777;
+$light-gray: #eee;
+$dark-gray: #444;
+
+// Gradients
+$primary-gradient: linear-gradient(135deg, $primary-color, $accent-color);
+$secondary-gradient: linear-gradient(135deg, $secondary-color, $primary-light);
+
+// Fonts
+$primary-font: "Montserrat", sans-serif;
+$secondary-font: "Playfair Display", serif;
+
+// Spacing
+$spacing-unit: 1rem;
+$section-padding: 6rem 0;
+
+// Breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// Shadows
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+$shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.25);
+
+// Transitions
+$transition-fast: all 0.2s ease;
+$transition-medium: all 0.3s ease;
+$transition-slow: all 0.5s ease;
+$transition-very-slow: all 1s ease;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+$border-radius-circle: 50%;
+
+// Z-index
+$z-index: (
+  bg-elements: -1,
+  particles: 0,
+  content: 1,
+  header: 1000,
+  overlay: 2000,
+  modal: 3000,
+);
+
+// Dark theme variables
+:root {
+  --bg-color: #{$light-color};
+  --text-color: #{$dark-color};
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] {
+  --bg-color: #{$dark-color};
+  --text-color: #{$light-color};
+  --header-bg: rgba(0, 0, 0, 0.8);
+  --card-bg: rgba(0, 0, 0, 0.5);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --glass-bg: rgba(0, 0, 0, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
