@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FurniCraft - Premium Furniture</title>
+    <meta
+      name="description"
+      content="Modern furniture with creative designs for your home and office"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Animated Background Elements -->
+    <div class="bg-elements">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles-js"></div>
+
+    <!-- Header with Glassmorphism -->
+    <header class="header glass">
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__logo">
+            <a href="#home" class="logo-link">
+              <svg class="logo-svg" width="40" height="40" viewBox="0 0 40 40">
+                <path
+                  class="logo-path"
+                  d="M20,5 L35,15 L30,35 L10,35 L5,15 Z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+              <span class="logo-text">FurniCraft</span>
+            </a>
+          </div>
+          <nav class="header__nav">
+            <ul class="header__menu">
+              <li>
+                <a href="#home" class="nav-link active" data-i18n="home"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="nav-link" data-i18n="about">About</a>
+              </li>
+              <li>
+                <a href="#products" class="nav-link" data-i18n="products"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a href="#news" class="nav-link" data-i18n="news">News</a>
+              </li>
+              <li>
+                <a href="#contact" class="nav-link" data-i18n="contact"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+            <div class="header__actions">
+              <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="uz">UZ</button>
+              </div>
+              <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+              </button>
+              <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section with Parallax -->
+    <section id="home" class="hero">
+      <div class="hero__parallax">
+        <div class="parallax-layer layer-1" data-depth="0.1"></div>
+        <div class="parallax-layer layer-2" data-depth="0.3"></div>
+        <div class="parallax-layer layer-3" data-depth="0.6"></div>
+      </div>
+      <div class="container">
+        <div class="hero__content">
+          <h1 class="hero__title" data-i18n="hero_title">
+            <span class="title-word word-1">Crafting</span>
+            <span class="title-word word-2">Comfort,</span>
+            <span class="title-word word-3">Designing</span>
+            <span class="title-word word-4">Dreams</span>
+          </h1>
+          <p class="hero__subtitle" data-i18n="hero_subtitle">
+            Premium furniture for your home and office with exceptional quality
+            and design
+          </p>
+          <div class="hero__buttons">
+            <a
+              href="#products"
+              class="btn btn-primary btn-hover-3d"
+              data-i18n="view_products"
+              >View Products</a
+            >
+            <a
+              href="#contact"
+              class="btn btn-secondary btn-hover-3d"
+              data-i18n="contact_us"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll">
+        <svg class="scroll-arrow" width="30" height="50" viewBox="0 0 30 50">
+          <path
+            class="arrow-path"
+            d="M15,0 L15,40 M5,30 L15,40 L25,30"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </section>
+
+    <!-- About Section with Creative Swiper -->
+    <section id="about" class="about section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" data-i18n="about_title">
+            <span class="title-line line-1">About Our</span>
+            <span class="title-line line-2 accent">Craft</span>
+          </h2>
+          <p class="section__subtitle" data-i18n="about_subtitle">
+            Discover our passion for furniture making
+          </p>
+        </div>
+        <div class="about__content">
+          <div class="about__text">
+            <h3 class="gradient-text" data-i18n="about_heading">
+              Handcrafted Excellence Since 1995
+            </h3>
+            <p data-i18n="about_text_1">
+              For over 25 years, we've been creating furniture that combines
+              timeless design with modern functionality. Our craftsmen pour
+              their expertise into every piece, ensuring quality that lasts
+              generations.
+            </p>
+            <p data-i18n="about_text_2">
+              We source only the finest materials from sustainable forests and
+              ethical suppliers, because we believe beautiful furniture should
+              also be responsible.
+            </p>
+            <div class="about__stats">
+              <div class="stat stat-1">
+                <span class="stat__number counter" data-count="25">0</span>
+                <span class="stat__label" data-i18n="years_experience"
+                  >Years Experience</span
+                >
+              </div>
+              <div class="stat stat-2">
+                <span class="stat__number counter" data-count="10000">0</span>
+                <span class="stat__label" data-i18n="happy_customers"
+                  >Happy Customers</span
+                >
+              </div>
+              <div class="stat stat-3">
+                <span class="stat__number counter" data-count="500">0</span>
+                <span class="stat__label" data-i18n="designs_created"
+                  >Designs Created</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="about__slider">
+            <div class="swiper about-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="slide-content">
+                    <img src="images/about-1.jpg" alt="Woodworking process" />
+                    <div class="slide-overlay glass">
+                      <h3 data-i18n="slide_1">Master Woodworking</h3>
+                      <div class="slide-progress"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide-content">
+                    <img src="images/about-2.jpg" alt="Design process" />
+                    <div class="slide-overlay glass">
+                      <h3 data-i18n="slide_2">Creative Design</h3>
+                      <div class="slide-progress"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide-content">
+                    <img src="images/about-3.jpg" alt="Quality control" />
+                    <div class="slide-overlay glass">
+                      <h3 data-i18n="slide_3">Quality Inspection</h3>
+                      <div class="slide-progress"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section with 360° Viewer -->
+    <section id="products" class="products section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" data-i18n="products_title">
+            <span class="title-line line-1">Our</span>
+            <span class="title-line line-2 accent">Collections</span>
+          </h2>
+          <p class="section__subtitle" data-i18n="products_subtitle">
+            Explore our premium furniture lines
+          </p>
+        </div>
+        <div class="product-viewer">
+          <div class="viewer-container">
+            <div class="product-spinner">
+              <div class="spinner-axis">
+                <img
+                  src="images/product-360/01.jpg"
+                  alt="Product 360 View"
+                  class="spinner-image"
+                />
+              </div>
+            </div>
+            <div class="product-controls">
+              <button class="spin-btn spin-left">
+                <i class="fas fa-undo"></i>
+              </button>
+              <button class="spin-btn spin-right">
+                <i class="fas fa-redo"></i>
+              </button>
+            </div>
+          </div>
+          <div class="products__filter">
+            <button class="filter-btn active" data-filter="all" data-i18n="all">
+              All
+            </button>
+            <button class="filter-btn" data-filter="living" data-i18n="living">
+              Living Room
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="bedroom"
+              data-i18n="bedroom"
+            >
+              Bedroom
+            </button>
+            <button class="filter-btn" data-filter="office" data-i18n="office">
+              Office
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="outdoor"
+              data-i18n="outdoor"
+            >
+              Outdoor
+            </button>
+          </div>
+          <div class="products__grid">
+            <!-- Product cards would go here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Section with Tilt Effect -->
+    <section id="news" class="news section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" data-i18n="news_title">
+            <span class="title-line line-1">Latest</span>
+            <span class="title-line line-2 accent">News</span>
+          </h2>
+          <p class="section__subtitle" data-i18n="news_subtitle">
+            Stay updated with our latest designs and offers
+          </p>
+        </div>
+        <div class="news-grid">
+          <article class="news-card tilt-card" data-tilt data-tilt-scale="1.05">
+            <div class="news-card__image">
+              <img
+                src="images/news-1.jpg"
+                alt="Furniture Trends 2023"
+                class="zoom-image"
+              />
+              <div class="news-card__date">
+                <span class="day">15</span>
+                <span class="month" data-i18n="june">June</span>
+              </div>
+            </div>
+            <div class="news-card__content">
+              <h3 data-i18n="news_1_title">Top Furniture Trends for 2023</h3>
+              <p data-i18n="news_1_excerpt">
+                Discover the emerging trends that will dominate interior design
+                this year...
+              </p>
+              <a href="#" class="news-card__link" data-i18n="read_more"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+          <article class="news-card tilt-card" data-tilt data-tilt-scale="1.05">
+            <div class="news-card__image">
+              <img
+                src="images/news-2.jpg"
+                alt="Sustainable Materials"
+                class="zoom-image"
+              />
+              <div class="news-card__date">
+                <span class="day">02</span>
+                <span class="month" data-i18n="july">July</span>
+              </div>
+            </div>
+            <div class="news-card__content">
+              <h3 data-i18n="news_2_title">
+                Our Commitment to Sustainable Materials
+              </h3>
+              <p data-i18n="news_2_excerpt">
+                How we're reducing our environmental impact through responsible
+                sourcing...
+              </p>
+              <a href="#" class="news-card__link" data-i18n="read_more"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section with Interactive Map -->
+    <section id="contact" class="contact section">
+      <div class="contact__map">
+        <iframe
+          src="https://maps.google.com/maps?q=Tashkent&output=embed"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+        <div class="map-overlay glass"></div>
+      </div>
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" data-i18n="contact_title">
+            <span class="title-line line-1">Get In</span>
+            <span class="title-line line-2 accent">Touch</span>
+          </h2>
+          <p class="section__subtitle" data-i18n="contact_subtitle">
+            We'd love to hear from you
+          </p>
+        </div>
+        <div class="contact__content">
+          <div class="contact__info">
+            <div class="info-card">
+              <div class="info-card__icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-card__content">
+                <h3 data-i18n="address">Address</h3>
+                <p data-i18n="company_address">
+                  123 Furniture Street, Tashkent, Uzbekistan
+                </p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="info-card__content">
+                <h3 data-i18n="phone">Phone</h3>
+                <p>+998 90 123 45 67</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="info-card__content">
+                <h3 data-i18n="email">Email</h3>
+                <p>info@furnicraft.com</p>
+              </div>
+            </div>
+            <div class="contact__social">
+              <a href="#" class="social-icon" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Telegram"
+                ><i class="fab fa-telegram-plane"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="contact__form glass">
+            <form id="contactForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  data-i18n-placeholder="your_name"
+                />
+                <label for="name" data-i18n="your_name">Your Name</label>
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  data-i18n-placeholder="your_email"
+                />
+                <label for="email" data-i18n="your_email">Your Email</label>
+              </div>
+              <div class="form-group">
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  data-i18n-placeholder="your_phone"
+                />
+                <label for="phone" data-i18n="your_phone">Your Phone</label>
+              </div>
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  data-i18n-placeholder="your_message"
+                ></textarea>
+                <label for="message" data-i18n="your_message"
+                  >Your Message</label
+                >
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary btn-hover-3d"
+                data-i18n="send_message"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer with Wave Animation -->
+    <footer class="footer glass">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__col footer__about">
+            <div class="footer__logo">
+              <svg class="logo-svg" width="40" height="40" viewBox="0 0 40 40">
+                <path
+                  class="logo-path"
+                  d="M20,5 L35,15 L30,35 L10,35 L5,15 Z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+              <span>FurniCraft</span>
+            </div>
+            <p class="footer__text" data-i18n="footer_about">
+              Crafting exceptional furniture with passion and precision since
+              1995.
+            </p>
+            <div class="footer__social">
+              <a href="#" class="social-icon" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Telegram"
+                ><i class="fab fa-telegram-plane"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__title" data-i18n="quick_links">Quick Links</h3>
+            <ul class="footer__links">
+              <li><a href="#home" data-i18n="home">Home</a></li>
+              <li><a href="#about" data-i18n="about">About</a></li>
+              <li><a href="#products" data-i18n="products">Products</a></li>
+              <li><a href="#news" data-i18n="news">News</a></li>
+              <li><a href="#contact" data-i18n="contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__title" data-i18n="products">Products</h3>
+            <ul class="footer__links">
+              <li><a href="#" data-i18n="living">Living Room</a></li>
+              <li><a href="#" data-i18n="bedroom">Bedroom</a></li>
+              <li><a href="#" data-i18n="office">Office</a></li>
+              <li><a href="#" data-i18n="outdoor">Outdoor</a></li>
+              <li><a href="#" data-i18n="new_arrivals">New Arrivals</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__title" data-i18n="newsletter">Newsletter</h3>
+            <p class="footer__text" data-i18n="newsletter_text">
+              Subscribe to get updates on new products and special offers.
+            </p>
+            <form class="footer__newsletter">
+              <input
+                type="email"
+                placeholder="Your Email"
+                data-i18n-placeholder="your_email"
+                required
+              />
+              <button
+                type="submit"
+                class="newsletter-btn"
+                data-i18n="subscribe"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p class="footer__copyright" data-i18n="copyright">
+            &copy; 2023 FurniCraft. All Rights Reserved.
+          </p>
+          <div class="footer__legal">
+            <a href="#" data-i18n="privacy_policy">Privacy Policy</a>
+            <a href="#" data-i18n="terms_of_service">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__waves">
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top glass" aria-label="Back to top">
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path d="M12 4L4 12H8V20H16V12H20L12 4Z" fill="currentColor" />
+      </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parallax-js@3.1.0/dist/parallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/product-spinner.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
