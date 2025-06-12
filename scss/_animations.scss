@@ -1,0 +1,287 @@
+// Logo animation
+@keyframes logo-draw {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-svg .logo-path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: logo-draw 1.5s ease forwards 0.5s;
+}
+
+// Word by word animation
+@keyframes word-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title-word {
+  display: inline-block;
+  opacity: 0;
+  animation: word-fade 0.8s ease forwards;
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      animation-delay: 0.2s * $i;
+    }
+  }
+}
+
+// Floating shapes animation
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.bg-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: map-get($z-index, bg-elements);
+  overflow: hidden;
+
+  .shape {
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.2;
+
+    &-1 {
+      @include floating-shape(300px, $primary-gradient, 20%, 10%, 0s);
+    }
+
+    &-2 {
+      @include floating-shape(400px, $secondary-gradient, 10%, 10%, 2s);
+    }
+
+    &-3 {
+      @include floating-shape(
+        200px,
+        linear-gradient(45deg, $accent-color, $secondary-color),
+        60%,
+        50%,
+        1s
+      );
+    }
+  }
+}
+
+// Scroll arrow animation
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.scroll-arrow {
+  height: 50px;
+
+  .arrow-path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: logo-draw 1s ease forwards 1.5s, bounce 2s infinite 2.5s;
+  }
+}
+
+// Tilt effect
+.tilt-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Zoom image effect
+.zoom-image {
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Wave animation
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer__waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+
+  .wave {
+    &-1 {
+      @include wave-effect(100px, 0.7, 15s);
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%238b5a2b" opacity=".25"/></svg>');
+    }
+
+    &-2 {
+      @include wave-effect(100px, 0.5, 20s);
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%238b5a2b" opacity=".25"/></svg>');
+      animation-direction: reverse;
+    }
+
+    &-3 {
+      @include wave-effect(100px, 0.3, 25s);
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%238b5a2b" opacity=".25"/></svg>');
+    }
+  }
+}
+
+// 3D Product Spinner
+.product-spinner {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+
+  .spinner-axis {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: $border-radius-lg;
+      box-shadow: $shadow-md;
+    }
+  }
+}
+
+// Swiper progress animation
+@keyframes progressAnimation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.slide-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: $primary-gradient;
+  animation: progressAnimation 5s linear forwards;
+}
+
+// Gradient text animation
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Fade in up
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Slide in from left
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Slide in from right
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Pulse effect
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Rotate continuously
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

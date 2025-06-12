@@ -1,0 +1,203 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: map-get($z-index, header);
+  transition: all $transition-medium;
+
+  &.glass {
+    @include glass-effect;
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  &__inner {
+    @include flex-between;
+    height: 80px;
+    padding: 0 $spacing-unit;
+  }
+
+  &__logo {
+    a {
+      @include flex-center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-color);
+      transition: $transition-fast;
+
+      &:hover {
+        .logo-path {
+          stroke: $accent-color;
+        }
+      }
+
+      img {
+        height: 40px;
+      }
+    }
+  }
+
+  &__nav {
+    @include respond-to(md) {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include respond-to(md) {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    li {
+      a {
+        position: relative;
+        font-weight: 600;
+        color: var(--text-color);
+        padding: 0.5rem 0;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: $primary-gradient;
+          transition: $transition-fast;
+        }
+
+        &:hover::after,
+        &.active::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__actions {
+    @include flex-center;
+    gap: 1rem;
+  }
+
+  .language-switcher {
+    display: flex;
+    gap: 0.5rem;
+
+    .lang-btn {
+      @include button-reset;
+      padding: 0.3rem 0.6rem;
+      border-radius: $border-radius-sm;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: $transition-fast;
+
+      &.active {
+        background: $primary-gradient;
+        color: $white;
+      }
+
+      &:not(.active):hover {
+        background-color: var(--border-color);
+      }
+    }
+  }
+
+  .theme-toggle {
+    @include button-reset;
+    @include flex-center;
+    width: 36px;
+    height: 36px;
+    border-radius: $border-radius-circle;
+    background-color: var(--border-color);
+    color: var(--text-color);
+    transition: $transition-fast;
+
+    &:hover {
+      background: $primary-gradient;
+      color: $white;
+    }
+
+    i {
+      font-size: 1rem;
+    }
+  }
+
+  .menu-toggle {
+    @include button-reset;
+    @include flex-center;
+    flex-direction: column;
+    width: 36px;
+    height: 36px;
+    gap: 6px;
+
+    @include respond-to(md) {
+      display: none;
+    }
+
+    .menu-line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--text-color);
+      transition: $transition-medium;
+    }
+
+    &.active {
+      .menu-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .menu-line:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+
+  // Mobile menu
+  &.mobile-menu-open {
+    .header__menu {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background-color: var(--header-bg);
+      backdrop-filter: blur(10px);
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+      box-shadow: $shadow-md;
+      display: flex;
+
+      li {
+        width: 100%;
+        text-align: center;
+
+        a {
+          display: block;
+          padding: 1rem;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  // Scrolled state
+  &.scrolled {
+    box-shadow: $shadow-md;
+    background-color: rgba(var(--header-bg), 0.95);
+    backdrop-filter: blur(10px);
+  }
+}
